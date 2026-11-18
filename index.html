@@ -4,12 +4,12 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fcfaf7"><meta name="description" content="饭票校园食堂点评，按口味、预算和等候时间找到今天想吃的那道菜。">
   <title>饭票 · 校园食堂点评</title>
-  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=3"><script defer src="app.js?v=2"></script>
+  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=4"><script defer src="app.js?v=4"></script>
 </head>
 <body>
 <header><div class="navwrap"><a class="brand" href="#discover" aria-label="饭票首页"><img src="icon.svg?v=3" alt=""><span><strong>饭票</strong><small>FANPIAO</small></span></a>
 <nav aria-label="主导航"><a href="#discover" id="nav-discover">发现菜品</a><a href="#saved" id="nav-saved">想吃清单 <span id="saved-count"></span></a></nav>
-<span class="campus"><i data-i="pin"></i> 示范校区</span></div></header>
+</div></header>
 <main>
 <section class="hero" id="hero" aria-label="校园午餐指南">
   <div class="poster"><div class="poster-inner">
@@ -28,6 +28,5 @@
 <div class="resultmeta"><span id="results" aria-live="polite"></span><label>排序<select id="sort" aria-label="菜品排序"><option value="default">综合推荐</option><option value="rating">评分最高</option><option value="price">价格最低</option><option value="queue">等候最短</option></select></label></div>
 <div id="cards" class="cards"></div></section>
 </main>
-<footer><div class="footer-inner"><strong>饭票 <i>FANPIAO</i></strong><small>校园食堂点评体验版 · 菜品、排队时间与预置点评均为示例。想吃清单与新增点评保存在本机。</small></div></footer>
 <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog><div id="toast" role="status"></div>
 </body></html>
