@@ -36,6 +36,7 @@ function render(){
  const items=list(),n=Object.keys(initial).filter(k=>filters[k]!=='不限').length;
  el('saved-count').textContent=saved.length?`(${saved.length})`:'';
  el('hero').hidden=savedView;
+ document.querySelectorAll('[data-hall]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.hall===filters.hall)));
  el('menuheading').textContent=savedView?'想吃清单':'食堂发现';
  el('section-kicker').textContent=savedView?'MY SHORTLIST':'CANTEEN MENU';
  for(const name of ['discover','saved'])el('nav-'+name).classList.toggle('active',(name==='saved')===savedView);

@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fcfaf7"><meta name="description" content="饭票校园食堂点评，按口味、预算和等候时间找到今天想吃的那道菜。">
   <title>饭票 · 校园食堂点评</title>
-  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=4"><script defer src="app.js?v=4"></script>
+  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=5"><script defer src="app.js?v=5"></script>
 </head>
 <body>
 <header><div class="navwrap"><a class="brand" href="#discover" aria-label="饭票首页"><img src="icon.svg?v=3" alt=""><span><strong>饭票</strong><small>FANPIAO</small></span></a>
@@ -21,7 +21,12 @@
     </div>
     <div class="mascot" aria-hidden="true"><img src="lunch-runner.png" alt="" fetchpriority="high"></div>
   </div></div>
-  <div class="hall-strip"><div class="hall-inner"><span class="hall-label"><i data-i="pin"></i> 食堂直达</span><button data-hall="东苑">东苑食堂 <span>↗</span></button><button data-hall="北区">北区食堂 <span>↗</span></button><button data-hall="南园">南园食堂 <span>↗</span></button></div></div>
+  <div class="hall-strip"><div class="hall-inner" role="group" aria-labelledby="hall-title">
+    <span class="hall-label" id="hall-title"><i data-i="pin"></i>食堂直达</span>
+    <button class="hall-button" data-hall="东苑"><img src="hall-rice.svg" alt="">东苑食堂<span aria-hidden="true">›</span></button>
+    <button class="hall-button" data-hall="北区"><img src="hall-noodles.svg" alt="">北区食堂<span aria-hidden="true">›</span></button>
+    <button class="hall-button" data-hall="南园"><img src="hall-steamer.svg" alt="">南园食堂<span aria-hidden="true">›</span></button>
+  </div></div>
 </section>
 <section class="menu" id="menu" aria-labelledby="menuheading"><div class="sectionhead"><div class="section-title"><div><div class="eyebrow" id="section-kicker">CANTEEN MENU</div><h2 id="menuheading">食堂发现</h2></div></div><label class="search"><i data-i="search"></i><input id="search" type="search" placeholder="搜菜名、食堂或窗口" aria-label="搜菜名、食堂或窗口"></label></div>
 <div class="filters"><div id="chips" class="chips" aria-label="快捷筛选"></div><button id="filter-open" class="filterbtn"><i data-i="sliders"></i><span>筛选</span></button></div>

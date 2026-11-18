@@ -55,11 +55,15 @@ h1 em { color: var(--accent); font-style: normal }
 .mascot { height: clamp(300px,25.5vw,385px); position: relative; display: grid; place-items: center }
 .mascot img { display: block; width: 92%; height: 88%; position: absolute; inset: 6% 4%; object-fit: contain; filter: saturate(.75) }
 .hall-strip { background: var(--paper); color: var(--ink); border-block: 1px solid var(--rule) }
-.hall-inner { gap: clamp(20px, 4.5vw, 72px); min-height: 43px }
+.hall-inner { display: grid; grid-template-columns: auto repeat(3,minmax(0,1fr)); gap: 14px; padding-block: 16px 19px }
 .hall-label { color: var(--muted); gap: 6px; font-size: 12px; font-weight: 750; letter-spacing: .08em }
-.hall-inner button { gap: 12px; padding: 9px 0; color: var(--ink); font-size: 13px }
-.hall-inner button span { color: var(--accent); font-family: Arial, sans-serif }
-.hall-inner button:hover { color: var(--accent); text-decoration: underline }
+.hall-label { margin-right: 12px }
+.hall-button { --edge: #725849; min-height: 47px; gap: 10px; padding: 4px 14px; border: 1.5px solid var(--edge); border-radius: 15px; background: #fffaf4; color: #44372f; box-shadow: 0 3px 0 var(--edge); font-size: 15px; font-weight: 750; transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease }
+.hall-button img { width: 38px; height: 36px; flex: none; transition: transform .18s ease }
+.hall-button span { margin-left: auto; font: 22px/1 Arial,sans-serif; color: #876958 }
+.hall-button[aria-pressed="true"] { background: #f9e3d8; border-color: var(--accent-deep); box-shadow: 0 1px 0 var(--accent-deep); transform: translateY(2px) }
+@media (hover:hover) { .hall-button:hover { background: #faece1 } .hall-button:hover img { transform: rotate(-7deg) } }
+.hall-button:active { transform: translateY(3px); box-shadow: none }
 main { background: var(--canvas) }
 .menu { padding: 34px 0 54px; min-height: 56vh; scroll-margin-top: 14px }
 .sectionhead, .filters, .resultmeta, .nameprice, .card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px }
@@ -155,8 +159,11 @@ body:has(dialog[open]) { overflow: hidden }
   .redbtn { font-size: 13px; padding: 9px 12px }
   .featured { font-size: 11px; padding: 3px 0 }
   .mascot { height: 218px; margin-right: -12px }
-  .hall-inner { justify-content: space-between; min-height: 39px; gap: 6px }
-  .hall-label, .hall-inner button { font-size: 11px; gap: 3px }
+  .hall-inner { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; padding-block: 11px 15px }
+  .hall-label { grid-column: 1/-1; font-size: 12px }
+  .hall-button { justify-content: center; min-height: 44px; padding: 3px; gap: 3px; font-size: 12px; border-radius: 12px; white-space: nowrap }
+  .hall-button img { width: clamp(24px,7vw,34px); height: 30px }
+  .hall-button span { display: none }
   .menu { padding: 24px 0 34px }
   .section-title { gap: 7px }
   .sectionhead h2 { font-size: 25px }
