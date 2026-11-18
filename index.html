@@ -4,20 +4,22 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fcfaf7"><meta name="description" content="饭票校园食堂点评，按口味、预算和等候时间找到今天想吃的那道菜。">
   <title>饭票 · 校园食堂点评</title>
-  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=7"><script defer src="app.js?v=6"></script>
+  <link rel="icon" href="icon.svg?v=3" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=8"><script defer src="app.js?v=6"></script>
 </head>
 <body>
 <header id="discover"><div class="navwrap"><a class="brand" href="#discover" aria-label="饭票首页"><img src="icon.svg?v=3" alt=""><span><strong>饭票</strong><small>FANPIAO</small></span></a>
-<nav aria-label="主导航"><a href="#discover" id="nav-discover">今天吃什么</a><a href="#saved" id="nav-saved">想吃清单 <span id="saved-count"></span></a></nav>
+<nav aria-label="主导航"><a href="#discover" id="nav-discover">首页</a><a href="#saved" id="nav-saved">想吃清单 <span id="saved-count"></span></a></nav>
 </div></header>
 <main>
 <section class="hero" id="hero" aria-label="校园午餐指南">
   <div class="poster"><div class="poster-inner">
     <div class="hero-copy">
-      <div class="edition"><span class="ticket-dot"></span>校园食堂指南<span class="edition-en" lang="en"> / CAMPUS EATS</span></div>
-      <h1>下课，<em>开饭！</em></h1>
-      <p>还没想好吃什么？从校园菜单里抽一道。</p>
-      <div class="hero-actions"><button class="redbtn" id="draw"><i data-i="dice"></i>随机挑一道</button><button class="featured" id="browse">自己选菜 <span aria-hidden="true">↓</span></button></div>
+      <h1>今天吃什么<span>？</span></h1>
+      <p>看看同学怎么评，再决定去哪个窗口。</p>
+      <div class="hero-actions">
+        <button class="redbtn" id="browse">看校园菜单 <span aria-hidden="true">↓</span></button>
+        <button class="draw-button" id="draw"><i data-i="dice"></i>随机挑一道</button>
+      </div>
     </div>
     <figure class="dish-print">
       <img src="dish-1.jpg" width="508" height="508" alt="酱汁红烧肉配卤蛋、青菜和米饭" fetchpriority="high">
