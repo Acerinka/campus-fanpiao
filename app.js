@@ -37,10 +37,10 @@ function render(){
  el('saved-count').textContent=saved.length?`(${saved.length})`:'';
  el('hero').hidden=savedView;
  el('menuheading').textContent=savedView?'想吃清单':'食堂发现';
- el('section-kicker').innerHTML=(savedView?'MY SHORTLIST':'THE MENU')+' <span class="line"></span>';
+ el('section-kicker').textContent=savedView?'MY SHORTLIST':'CANTEEN MENU';
  for(const name of ['discover','saved'])el('nav-'+name).classList.toggle('active',(name==='saved')===savedView);
  el('chips').innerHTML=Object.entries(shortcuts).map(([k,i])=>`<button data-chip="${k}" aria-pressed="${k===chip}" class="${k===chip?'active':''}">${icon(i)}${k}</button>`).join('');
- el('filter-open').classList.toggle('on',!!n);el('filter-open').querySelector('span').textContent=n?`筛选 (${n})`:'筛选';
+ el('filter-open').classList.toggle('on',!!n);el('filter-open').querySelector('span').textContent=n===1&&filters.hall!=='不限'?filters.hall+'食堂':n?`筛选 (${n})`:'筛选';
  el('results').textContent=`共 ${items.length} 道菜品`;
  const noSaved=savedView&&!saved.length;
  el('cards').innerHTML=items.length?items.map(card).join(''):`<div class="empty"><strong>${noSaved?'还没有想吃的菜':'没有找到合适的菜品'}</strong><p>${noSaved?'看到心动的菜，点一下爱心就能存到这里。':'试试其他口味，或放宽预算与等候时间。'}</p><button class="secondary" data-reset>${noSaved?'去发现菜品':'清除筛选'}</button></div>`;
@@ -62,6 +62,7 @@ document.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;const a=b.dataset;
  if('close' in a)dialog.close();
  else if('detail' in a)detail(+a.detail);
+ else if('hall' in a){reset();filters.hall=a.hall;render();el('menu').scrollIntoView()}
  else if('chip' in a){chip=a.chip;render()}
  else if('save' in a){const id=+a.save,liked=saved.includes(id);saved=liked?saved.filter(v=>v!==id):[...saved,id];const stored=persist('saved',saved);render();if(a.inside)detail(id,a.inside==='draw');notify(stored?(liked?'已移出想吃清单':'已加入想吃清单'):'已在本次访问中更新')}
  else if('write' in a)writeReview(+a.write);

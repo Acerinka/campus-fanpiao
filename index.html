@@ -2,22 +2,32 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#fbf8f0"><meta name="description" content="饭票校园食堂点评，按口味、预算和等候时间找到今天想吃的那道菜。">
+  <meta name="theme-color" content="#d9ec9b"><meta name="description" content="饭票校园食堂点评，按口味、预算和等候时间找到今天想吃的那道菜。">
   <title>饭票 · 校园食堂点评</title>
-  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script defer src="app.js"></script>
+  <link rel="icon" href="icon.svg?v=2" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=2"><script defer src="app.js?v=2"></script>
 </head>
 <body>
-<header><div class="navwrap"><a class="brand" href="#discover" aria-label="饭票首页"><img src="icon.svg" alt=""><strong>饭票</strong><span>校园食堂点评</span></a>
+<header><div class="navwrap"><a class="brand" href="#discover" aria-label="饭票首页"><img src="icon.svg?v=2" alt=""><span><strong>饭票</strong><small>FANPIAO</small></span></a>
 <nav aria-label="主导航"><a href="#discover" id="nav-discover">发现菜品</a><a href="#saved" id="nav-saved">想吃清单 <span id="saved-count"></span></a></nav>
 <span class="campus"><i data-i="pin"></i> 示范校区</span></div></header>
 <main>
-<section class="hero" id="hero" aria-label="今日推荐"><div class="hero-copy"><div class="eyebrow"><span class="line"></span>CAMPUS FOOD GUIDE</div><h1>今天，<em>吃点好的。</em></h1><p>从同学的餐盘里，找到你的下一顿。</p><button class="redbtn" id="draw"><i data-i="dice"></i>帮我挑一餐</button></div>
-<button class="hero-photo" data-detail="1" aria-label="查看今日招牌，招牌红烧肉饭"><span class="photo-tag"><span>✦</span> 今日招牌</span><span class="photo-caption"><span><small>东苑食堂 · 一楼 03 窗口</small><strong>招牌红烧肉饭</strong></span><b>↗</b></span></button></section>
-<section class="menu" aria-labelledby="menuheading"><div class="sectionhead"><div><div class="eyebrow" id="section-kicker">THE MENU <span class="line"></span></div><h2 id="menuheading">食堂发现</h2></div><label class="search"><i data-i="search"></i><input id="search" type="search" placeholder="搜菜名、食堂或窗口" aria-label="搜菜名、食堂或窗口"></label></div>
+<section class="hero" id="hero" aria-label="校园午餐指南">
+  <div class="poster"><div class="poster-inner">
+    <div class="hero-copy">
+      <div class="edition"><span class="ticket-dot"></span>校园食堂指南<span class="edition-en" lang="en"> / CAMPUS EATS</span></div>
+      <h1>下课，<em>开饭！</em></h1>
+      <p>跟着同学的点评，找到今天最想吃的那个窗口。</p>
+      <div class="hero-actions"><button class="redbtn" id="draw"><i data-i="dice"></i>帮我挑一餐</button><button class="featured" data-detail="1">看今日招牌 <span aria-hidden="true">↗</span></button></div>
+    </div>
+    <div class="mascot" aria-hidden="true"><img src="lunch-runner.png" alt="" fetchpriority="high"></div>
+  </div></div>
+  <div class="hall-strip"><div class="hall-inner"><span class="hall-label"><i data-i="pin"></i> 食堂直达</span><button data-hall="东苑">东苑食堂 <span>↗</span></button><button data-hall="北区">北区食堂 <span>↗</span></button><button data-hall="南园">南园食堂 <span>↗</span></button></div></div>
+</section>
+<section class="menu" id="menu" aria-labelledby="menuheading"><div class="sectionhead"><div class="section-title"><div class="section-mark" aria-hidden="true">✳</div><div><div class="eyebrow" id="section-kicker">CANTEEN MENU</div><h2 id="menuheading">食堂发现</h2></div></div><label class="search"><i data-i="search"></i><input id="search" type="search" placeholder="搜菜名、食堂或窗口" aria-label="搜菜名、食堂或窗口"></label></div>
 <div class="filters"><div id="chips" class="chips" aria-label="快捷筛选"></div><button id="filter-open" class="filterbtn"><i data-i="sliders"></i><span>筛选</span></button></div>
 <div class="resultmeta"><span id="results" aria-live="polite"></span><label>排序<select id="sort" aria-label="菜品排序"><option value="default">综合推荐</option><option value="rating">评分最高</option><option value="price">价格最低</option><option value="queue">等候最短</option></select></label></div>
 <div id="cards" class="cards"></div></section>
 </main>
-<footer><strong>饭票</strong><span>校园食堂点评 · 初稿体验版</span><small>菜品、排队时间与预置点评均为示例；想吃清单与新增点评保存在本机。</small></footer>
+<footer><div class="footer-inner"><strong>饭票 <i>FANPIAO</i></strong><small>校园食堂点评体验版 · 菜品、排队时间与预置点评均为示例。想吃清单与新增点评保存在本机。</small></div></footer>
 <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog><div id="toast" role="status"></div>
 </body></html>
